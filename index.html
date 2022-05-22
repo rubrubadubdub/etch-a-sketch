@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etch-a-sketch</title>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="./main.js" defer></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    <div id="inputbox">
+      <input id="num" name="num" />
+      <button id="submit" onclick="submitNewGrid()">Submit</button>
+      <input id="base" type="color" value="#000">
+    </div>
+    <script>
+      const inputs = document.querySelectorAll(".controls input");
+
+      function handleUpdate() {
+        r.style.setProperty('--colorbase', this.value);
+      }
+
+      inputs.forEach((input) => input.addEventListener("change", handleUpdate));
+      inputs.forEach((input) =>
+        input.addEventListener("mousemove", handleUpdate)
+      );
+    </script>
+  </body>
+</html>

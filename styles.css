@@ -1,0 +1,65 @@
+:root{
+    --sq-size: 4;
+    --colorbase: black;
+}
+
+body {
+    display: flex;
+    width: -webkit-fill-available;
+    flex-direction: column;
+    justify-content:stretch;
+    align-items: center;
+    padding-inline: 25%;
+    margin-inline: 2rem;
+}
+.controls {
+    margin-bottom: auto;
+  }
+
+#container {
+    display: grid;
+    width: -webkit-fill-available;
+    height: auto;
+    grid-template-columns: repeat(var(--sq-size), 1fr);
+    grid-template-rows: repeat(var(--sq-size), 1fr);
+    gap: 0;
+    border: 1px solid black;
+    /* grid-auto-rows: minmax(auto, 100px); */
+    margin-bottom: 1rem;
+  }
+
+  @media screen and (max-width: 960px) {
+    body{
+      padding-inline: 20%;
+      margin-inline: 1.5rem;
+    }
+}
+  
+  
+  @media screen and (max-width: 780px) {
+      body{
+        padding-inline: 10%;
+        margin-inline: 1rem;
+      }
+  }
+
+  @media screen and (max-width: 600px) {
+    body{
+      padding-inline: 5%;
+      margin-inline: 0.5rem;
+    }
+}
+
+  .cell {
+    aspect-ratio: 1 / 1;
+    height: fit-content;
+    /*border: 1px solid black;*/
+  }
+
+  .etched {
+    background-color: var(--colorbase);
+}
+
+  .cell:hover {
+      background-color: blue;
+  }
